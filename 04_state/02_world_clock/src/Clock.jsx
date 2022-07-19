@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import './clock.scss';
 
 const getTimeWithOffset = (offset) => {
@@ -9,8 +10,33 @@ const getTimeWithOffset = (offset) => {
   );
 };
 
+const formatDate = (date) => moment(date).format('LTS');
+
 export default class Clock extends Component {
+  state = {
+    time: getTimeWithOffset(this.props.offset),
+  };
+
+  componentDidMount() {
+    this.timerId = setInterval(
+      () =>
+        this.setState({
+          time: getTimeWithOffset(this.props.offset),
+        }),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
   render() {
-    return <div>Clock</div>;
+    return (
+      <div className="clock">
+        <div className="clock__location">{this.props.location}</div>
+        <div className="clock__time">{formatDate(this.state.time)}</div>
+      </div>
+    );
   }
 }
