@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Search from './Search.jsx';
+import Search from './Search';
 import './index.scss';
 
 const rootElem = document.querySelector('#root');
@@ -8,8 +8,7 @@ const rootElem = document.querySelector('#root');
 function App() {
   return (
     <>
-      <h1>App component</h1>
-      {/* <Search /> */}
+      <Search name="Tom" />
     </>
   );
 }
