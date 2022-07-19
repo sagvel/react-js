@@ -12,7 +12,7 @@ export default class Counter extends Component {
       this.setState({
         counter: this.state.counter + 1,
       });
-    }, this.props.intertval);
+    }, this.props.interval);
   }
   render() {
     return <div className="counter">{this.state.counter}</div>;
