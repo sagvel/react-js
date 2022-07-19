@@ -4,11 +4,7 @@ import './avatar.scss';
 export default function Avatar(props) {
   return (
     <>
-      <img
-        className="avatar"
-        src={props.user.avatarUrl}
-        alt={props.user.name}
-      />
+      <img className="avatar" src={props.avatarUrl} alt={props.name} />
     </>
   );
 }

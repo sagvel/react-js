@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Comment
-        user={userInfo}
+        author={userInfo}
         text="Good job!"
         date={new Date('2019-01-01T11:32:19.566Z')}
       />
