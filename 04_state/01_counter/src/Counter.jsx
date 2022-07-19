@@ -15,7 +15,6 @@ export default class Counter extends Component {
     }, props.intertval);
   }
   render() {
-    const { counter } = this.state;
-    return <div className="counter">{counter}</div>;
+    return <div className="counter">{this.state.counter}</div>;
   }
 }
