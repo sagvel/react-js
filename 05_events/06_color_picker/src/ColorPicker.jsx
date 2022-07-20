@@ -17,10 +17,9 @@ export default class ColorPicker extends Component {
     });
   };
   render() {
-    const { textColor } = this.state;
     return (
       <div>
-        <div className="picker__title">{textColor}</div>
+        <div className="picker__title">{this.state.textColor}</div>
         <div>
           <button
             className="picker__button picker__button_coral"
