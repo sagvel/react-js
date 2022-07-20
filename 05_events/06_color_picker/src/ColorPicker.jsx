@@ -25,12 +25,12 @@ export default class ColorPicker extends Component {
           <button
             className="picker__button picker__button_coral"
             data-color="Coral"
-            onMouseEnter={(e) => this.mouseFocus(e)}
-            onMouseLeave={this.mouseNoFocus}
+            onPointerEnter={(e) => this.mouseFocus(e)}
+            onPointerLeave={this.mouseNoFocus}
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            data-color="Auqa"
+            data-color="Aqua"
             onMouseEnter={(e) => this.mouseFocus(e)}
             onMouseLeave={this.mouseNoFocus}
           ></button>
