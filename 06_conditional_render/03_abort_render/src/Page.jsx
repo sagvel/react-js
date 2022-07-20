@@ -21,7 +21,7 @@ export default class Page extends Component {
           </button>
           <button
             className="btn"
-            onClick={() => this.setText('Another exciting text')}
+            onClick={() => this.setText('Another exciting text.')}
           >
             Text 2
           </button>
