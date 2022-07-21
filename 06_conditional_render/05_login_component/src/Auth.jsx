@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Login from './Login';
-import Logout from './logout';
+import Logout from './Logout';
 import Spinner from './Spinner';
 
 export default class Auth extends Component {
