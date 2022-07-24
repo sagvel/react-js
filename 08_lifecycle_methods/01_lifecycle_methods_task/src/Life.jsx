@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Life extends Component {
   constructor() {
     super();
-    console.log('constructor: good  place to create state');
+    console.log('constructor: good place to create state');
   }
   componentDidMount() {
     console.log('componentDidMount: API calls, subscriptions');
