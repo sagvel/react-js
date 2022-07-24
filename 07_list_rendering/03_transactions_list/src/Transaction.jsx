@@ -10,8 +10,9 @@ export default function Transaction({ time, from, to, rate, amount }) {
     <>
       <span className="transaction__date">{formatDate(time)}</span>
       <span className="transaction__time">{formatTime(time)}</span>
-      <span className="transaction__assets">{from}</span>
-      <span className="transaction__assets">{to}</span>
+      <span className="transaction__assets">
+        {from} {' → '} {to}
+      </span>
       <span className="transaction__rate">{formatNum.format(rate)}</span>
       <span className="transaction__amount">{formatNum.format(amount)}</span>
     </>
