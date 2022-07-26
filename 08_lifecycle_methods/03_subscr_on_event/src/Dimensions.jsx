@@ -19,7 +19,7 @@ export default class Dimensions extends Component {
     window.removeEventListener('resize', this.onResize);
   }
 
-  onResize = (e) => {
+  onResize = e => {
     const { innerWidth, innerHeight } = e.target;
     this.setDimensions(innerWidth, innerHeight);
   };
