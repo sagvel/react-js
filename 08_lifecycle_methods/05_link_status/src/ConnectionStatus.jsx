@@ -19,14 +19,14 @@ export default class ConnectionStatus extends Component {
   setOnline = e => {
     console.log(e.target);
     this.setState({
-      status: 'Online',
+      status: 'online',
       isOfline: false,
     });
   };
 
   setOffline = () => {
     this.setState({
-      status: 'Offline',
+      status: 'offline',
       isOfline: true,
     });
   };
