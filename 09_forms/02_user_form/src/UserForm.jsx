@@ -14,11 +14,16 @@ export default class UserForm extends Component {
     });
   };
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit(this.state);
+  };
+
   render() {
     const { name, student, occupation, about } = this.state;
-    const { onSubmit } = this.props;
+
     return (
-      <form className="login-form" onSubmit={() => onSubmit(this.state)}>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">
