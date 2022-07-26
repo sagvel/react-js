@@ -18,7 +18,7 @@ export default class UserForm extends Component {
     const { name, student, occupation, about } = this.state;
     const { onSubmit } = this.props;
     return (
-      <form className="login-form" onSubmit={e => onSubmit(this.state, e)}>
+      <form className="login-form" onSubmit={() => onSubmit(this.state)}>
         <h1 className="form-title">Profile</h1>
         <div className="form-control">
           <label className="form-label" htmlFor="name">

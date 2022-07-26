@@ -1,8 +1,7 @@
 import React from 'react';
 import UserForm from './UserForm';
 
-const createUser = (user, event) => {
-  event.preventDefault();
+const createUser = user => {
   console.log(user);
 };
 export default function App() {
