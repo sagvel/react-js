@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class ConnectionStatus extends Component {
   state = {
-    status: 'Online',
+    status: 'online',
     isOfline: false,
   };
 
