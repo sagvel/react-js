@@ -16,40 +16,37 @@ export default class UsersList extends Component {
     });
   }
 
-  componentDidUpdate() {
-    // this.filterUsers(this.state.filterText);
-  }
-
   handleChange = event => {
-    console.log(event.target.value);
+    const { value } = event.target;
     this.setState({
-      filterText: event.target.value.trim(),
+      filterText: value.trim(),
     });
   };
 
   filterUsers = text => {
+    const { users } = this.state;
     this.setState({
-      users: this.state.users.filter(user => user.name.includes(text)),
+      users: users.filter(({ name }) => name.includes(text)),
     });
   };
 
   render() {
-    const { users } = this.state;
-    const usersRender = users.filter(user =>
-      user.name.toLowerCase().includes(this.state.filterText.toLowerCase()),
+    const { users, filterText } = this.state;
+    const usersRender = users.filter(({ name }) =>
+      name.toLowerCase().includes(filterText.toLowerCase()),
     );
     return (
       <div>
         <Filter
           count={usersRender.length}
-          filterText={this.state.filterText}
+          filterText={filterText}
           onChange={this.handleChange}
         />
 
         <ul className="users">
-          {usersRender.map(user => (
-            <li key={user.id} className="user">
-              <User name={user.name} age={user.age} />
+          {usersRender.map(({ id, name, age }) => (
+            <li key={id} className="user">
+              <User name={name} age={age} />
             </li>
           ))}
         </ul>
