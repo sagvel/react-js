@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function ProductsList({ cartItems }) {
   const total = cartItems.reduce((sum, { price }) => sum + price, 0);
+
   return (
     <div className="products">
       <ul className="products__list">

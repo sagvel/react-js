@@ -21,16 +21,15 @@ export default class App extends React.Component {
   };
 
   render() {
+    const { userData } = this.state;
     return (
       <div className="page">
         <h1 className="title">
-          Hello, {this.state.userData.firstName} {this.state.userData.lastName}
+          Hello, {userData.firstName} {userData.lastName}
         </h1>
         <main className="content">
-          {/* <!-- ShoppingCart --> */}
-          <ShoppingCart userName={this.state.userData.firstName} />
-          {/* <!-- Profile --> */}
-          <Profile userData={this.state.userData} handleChange={this.handleChange} />
+          <ShoppingCart userName={userData.firstName} />
+          <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
     );
