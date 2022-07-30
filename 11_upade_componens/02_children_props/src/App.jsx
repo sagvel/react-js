@@ -24,7 +24,6 @@ export default class App extends React.Component {
         <button className="btn" onClick={this.openDialog}>
           Show dialog
         </button>
-        {/* <!-- Dialog --> */}
         <Dialog title="Recommendation" onClose={this.closeDialog} isOpen={this.state.isOpen}>
           <p>Use immutable array methods to work with data. It will help to avoid bugs</p>
         </Dialog>
