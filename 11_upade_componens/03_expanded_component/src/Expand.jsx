@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default class Expand extends React.Component {
   state = {
@@ -21,9 +19,9 @@ export default class Expand extends React.Component {
           <span className="expand__title">{title}</span>
           <button className="expand__toggle-btn" onClick={this.toggleContent}>
             {showContent ? (
-              <FontAwesomeIcon icon={faArrowUp} />
+              <i className="fas fa-chevron-down"></i>
             ) : (
-              <FontAwesomeIcon icon={faArrowDown} />
+              <i className="fas fa-chevron-up"></i>
             )}
           </button>
         </div>
