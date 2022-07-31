@@ -19,12 +19,8 @@ export default function Task({ id, done, text, onUpdateTask, onDeleteTask }) {
 
 Task.propTypes = {
   text: PropTypes.string.isRequired,
-  done: PropTypes.bool,
+  done: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
   onUpdateTask: PropTypes.func.isRequired,
   onDeleteTask: PropTypes.func.isRequired,
-};
-
-Task.defaultProps = {
-  done: false,
 };
