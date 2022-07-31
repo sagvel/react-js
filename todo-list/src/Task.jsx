@@ -9,7 +9,7 @@ export default function Task({ id, done, text, onUpdateTask, onDeleteTask }) {
         type="checkbox"
         className="list-item__checkbox"
         defaultChecked={done}
-        onClick={() => onUpdateTask(id)}
+        onChange={() => onUpdateTask(id)}
       />
       <span className={classNames({ 'list-item__text': done })}>{text}</span>
       <button className="list-item__delete-btn" onClick={() => onDeleteTask(id)}></button>
