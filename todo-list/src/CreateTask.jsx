@@ -1,10 +1,33 @@
 import React from 'react';
 
-export default function CreateTask() {
-  return (
-    <div className="create-task">
-      <input className="create-task__input" type="text" value="" />
-      <button className="btn create-task__btn">Create</button>
-    </div>
-  );
+export default class CreateTask extends React.PureComponent {
+  state = {
+    value: '',
+  };
+
+  handleChange = event => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
+  render() {
+    const { value } = this.state;
+    return (
+      <div className="create-task">
+        <input
+          className="create-task__input"
+          type="text"
+          value={value}
+          onChange={this.handleChange}
+        />
+        <button className="btn create-task__btn" onClick={() => this.props.addTask(value)}>
+          Create
+        </button>
+      </div>
+    );
+  }
 }
+
+// 1 Handle value from input and save to state
+// 2 Create new task
+// 3 Add new task to the data
