@@ -10,6 +10,13 @@ export default class CreateTask extends React.PureComponent {
       value: event.target.value,
     });
   };
+
+  handleCreateTask = () => {
+    this.props.addTask(this.state.value);
+    this.setState({
+      value: '',
+    });
+  };
   render() {
     const { value } = this.state;
     return (
@@ -20,7 +27,7 @@ export default class CreateTask extends React.PureComponent {
           value={value}
           onChange={this.handleChange}
         />
-        <button className="btn create-task__btn" onClick={() => this.props.addTask(value)}>
+        <button className="btn create-task__btn" onClick={this.handleCreateTask}>
           Create
         </button>
       </div>

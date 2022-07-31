@@ -3,13 +3,6 @@ import CreateTask from './CreateTask';
 import { createTask, deleteTask, getTasksList, updateTask } from './tasksGateway';
 import TasksList from './TasksList';
 
-// const todoData = [
-//   { id: 1, text: 'Learn React', done: false },
-//   { id: 2, text: 'Learn HTML / CSS', done: true },
-//   { id: 3, text: 'Learn JavaScript', done: true },
-//   { id: 4, text: 'Learn Dev Tools', done: true },
-// ];
-
 export default class App extends React.Component {
   state = {
     tasks: [],
