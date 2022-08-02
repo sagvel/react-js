@@ -15,7 +15,7 @@ export default function User() {
       .then(data => {
         setUserData(data);
       });
-  }, []);
+  }, [userId]);
   if (!userData) {
     return null;
   }
