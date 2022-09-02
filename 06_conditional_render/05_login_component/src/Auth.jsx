@@ -6,7 +6,6 @@ import Spinner from './Spinner';
 export default class Auth extends Component {
   state = {
     isLogin: true,
-    isLogout: false,
     showSpinner: false,
   };
 
@@ -18,7 +17,6 @@ export default class Auth extends Component {
     setTimeout(() => {
       this.setState({
         showSpinner: false,
-        isLogout: true,
       });
     }, 2000);
   };
@@ -31,14 +29,12 @@ export default class Auth extends Component {
   };
 
   render() {
-    const { isLogin, isLogout, showSpinner } = this.state;
+    const { isLogin, showSpinner } = this.state;
     return (
       <div>
         {isLogin && <Login onLogin={this.onLogin} />}
-        {isLogout && <Logout onLogout={this.onLogout} />}
-        {showSpinner && (
-          <Spinner size={30} showSpinner={this.state.showSpinner} />
-        )}
+        {!isLogin && !showSpinner && <Logout onLogout={this.onLogout} />}
+        {showSpinner && <Spinner size={30} showSpinner={this.state.showSpinner} />}
       </div>
     );
   }
