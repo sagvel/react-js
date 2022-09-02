@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 
 export default class Auth extends Component {
   state = {
-    isLogin: true,
+    isLogin: false,
     showSpinner: false,
   };
 
@@ -31,8 +31,8 @@ export default class Auth extends Component {
     const { isLogin, showSpinner } = this.state;
     return (
       <div>
-        {isLogin && <Login onLogin={this.onLogin} />}
-        {!isLogin && !showSpinner && <Logout onLogout={this.onLogout} />}
+        {!isLogin && <Login onLogin={this.onLogin} />}
+        {isLogin && !showSpinner && <Logout onLogout={this.onLogout} />}
         {showSpinner && <Spinner size={30} showSpinner={this.state.showSpinner} />}
       </div>
     );
