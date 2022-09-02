@@ -11,7 +11,7 @@ export default class Auth extends Component {
 
   onLogin = () => {
     this.setState({
-      isLogin: false,
+      isLogin: true,
       showSpinner: true,
     });
     setTimeout(() => {
@@ -23,7 +23,7 @@ export default class Auth extends Component {
 
   onLogout = () => {
     this.setState({
-      isLogin: true,
+      isLogin: false,
     });
   };
 
