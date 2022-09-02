@@ -24,7 +24,6 @@ export default class Auth extends Component {
   onLogout = () => {
     this.setState({
       isLogin: true,
-      isLogout: false,
     });
   };
 
