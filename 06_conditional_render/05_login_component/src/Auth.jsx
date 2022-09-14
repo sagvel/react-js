@@ -5,40 +5,35 @@ import Spinner from './Spinner';
 
 export default class Auth extends Component {
   state = {
-    isLogin: true,
-    isLogout: false,
+    isLogin: false,
     showSpinner: false,
   };
 
   onLogin = () => {
     this.setState({
-      isLogin: false,
+      isLogin: true,
       showSpinner: true,
     });
     setTimeout(() => {
       this.setState({
         showSpinner: false,
-        isLogout: true,
       });
     }, 2000);
   };
 
   onLogout = () => {
     this.setState({
-      isLogin: true,
-      isLogout: false,
+      isLogin: false,
     });
   };
 
   render() {
-    const { isLogin, isLogout, showSpinner } = this.state;
+    const { isLogin, showSpinner } = this.state;
     return (
       <div>
-        {isLogin && <Login onLogin={this.onLogin} />}
-        {isLogout && <Logout onLogout={this.onLogout} />}
-        {showSpinner && (
-          <Spinner size={30} showSpinner={this.state.showSpinner} />
-        )}
+        {!isLogin && <Login onLogin={this.onLogin} />}
+        {isLogin && !showSpinner && <Logout onLogout={this.onLogout} />}
+        {showSpinner && <Spinner size={30} showSpinner={this.state.showSpinner} />}
       </div>
     );
   }
