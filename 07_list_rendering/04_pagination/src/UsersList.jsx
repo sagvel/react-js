@@ -10,7 +10,6 @@ class UsersList extends React.Component {
   };
 
   goNext = () => {
-    console.log('next');
     this.setState({
       currentPage: this.state.currentPage + 1,
     });

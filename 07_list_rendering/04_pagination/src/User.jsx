@@ -1,6 +1,6 @@
 import React from 'react';
 
-const User = ({name, age}) => {
+const User = ({ name, age }) => {
   return (
     <>
       <span className="user__name">{name}</span>
