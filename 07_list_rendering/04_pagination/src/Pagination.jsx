@@ -4,9 +4,6 @@ const Pagination = ({ goPrev, goNext, currentPage, totalItems, itemsPerPage }) =
   const isPrevPageAvailable = currentPage > 1;
   const isNextPageAvailable = currentPage < Math.ceil(totalItems / itemsPerPage);
 
-  console.log(isPrevPageAvailable);
-  console.log(currentPage < Math.ceil(totalItems / itemsPerPage));
-
   return (
     <div className="pagination">
       <button className="btn" onClick={goPrev} disabled={!isPrevPageAvailable}>
